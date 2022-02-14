@@ -1,5 +1,5 @@
 # This is my modified or configured, if you will, version of dwm suckless' dynamic window manager
-## ===============================================================================================
+## =====================================
 It was created to make me comfortable so it may not be optimal for you
 
 ## Patches and features
