@@ -1,5 +1,5 @@
 # This is my modified or configured, if you will, version of dwm suckless' dynamic window manager
-## ==================================================
+
 It was created to make me comfortable so it may not be optimal for you
 
 ## Patches and features
@@ -9,12 +9,13 @@ It was created to make me comfortable so it may not be optimal for you
 - [scratchpads](https://dwm.suckless.org/patches/scratchpads/): Makes scratchpads like in i3 
 - New layouts: bstack, fibonacci, deck, centered master and more
 - True fullscreen and prevents focus shifting
-- Windows can be made sticky 
+- [sticky](https://dwm.suckless.org/patches/sticky/): windows can be made sticky, they follow you through tags
 - [autostart](https://dwm.suckless.org/patches/autostart/): Runs a script before dwm starts
 - [stacker](https://dwm.suckless.org/patches/stacker/): Move windows up the stack manually 
 - [shiftview](https://dwm.suckless.org/patches/nextprev/): Cycle through tags 
 - [vanitygaps](https://dwm.suckless.org/patches/vanitygaps/): Gaps allowed across all layouts
 - [swallow patch](https://dwm.suckless.org/patches/swallow/): if a program run from a terminal would make it inoperable, it temporarily takes its place to save space
+- [systray](https://dwm.suckless.org/patches/systray/): allows applets to be shown on the bar
 
 ## Requirements
 
