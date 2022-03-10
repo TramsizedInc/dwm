@@ -56,11 +56,14 @@ const char *spcmd2[] = {"st", "-n", "spcalc", "-f", "monospace:size=16", "-g", "
 /* music player scratchpads */
 const char *spcmd3[] = {"st", "-n", "spmus", "-g", "120x34", "-e", "mocp", NULL };
 
+/* discord scratchpad */
+const char *spcmd4[] = {"st", "-n", "spdiscord", "-g", "170x45", "-e", "dvm", "run", "s", NULL };
 static Sp scratchpads[] = {
 	/* name          cmd  */
 	{"spterm",      spcmd1},
 	{"spcalc",      spcmd2},
 	{"spmus",       spcmd3},
+	{"spdiscord",   spcmd4},
 };
 /*************************/
 
@@ -79,6 +82,7 @@ static const Rule rules[] = {
 	{ NULL,      "spterm",    NULL,       	    SPTAG(0),     1,           1,         0,        -1 },
 	{ NULL,      "spcalc",    NULL,       	    SPTAG(1),     1,           1,         0,        -1 },
 	{ NULL,      "spmus",    NULL,       	    SPTAG(2),     1,           1,         0,        -1 },
+	{ NULL,      "spdiscord",    NULL,       	SPTAG(3),     1,           1,         0,        -1 },
 };
 
 /* layout(s) */
@@ -181,7 +185,7 @@ static Key keys[] = {
 	{ ControlMask|ShiftMask,			XK_b,		spawn,		SHCMD("$BROWSER") },
 	{ ControlMask|ShiftMask,			XK_e,		spawn,		SHCMD("emacs") },
 	{ ControlMask|ShiftMask,			XK_k,		spawn,		SHCMD("speedcrunch") },
-	{ ControlMask|ShiftMask,			XK_d,		spawn,		SHCMD("thunar") },
+	{ ControlMask|ShiftMask,			XK_f,		spawn,		SHCMD("thunar") },
 	{ ControlMask|ShiftMask,			XK_v,		spawn,		SHCMD("vlc") },
 	{ ControlMask|Mod1Mask,		XK_Delete,		spawn,		SHCMD(TERMINAL " -e htop") },
 
@@ -226,6 +230,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_Return,	togglescratch,	{.ui = 0} },
 	{ MODKEY|ControlMask,			XK_m,	togglescratch,	{.ui = 1} },
 	{ ControlMask|ShiftMask,		XK_m,	togglescratch,	{.ui = 2} },
+	{ ControlMask|ShiftMask,		XK_d,	togglescratch,	{.ui = 3} },
 
 	//gapsize control
 	{ MODKEY,			XK_z,		incrgaps,	{.i = +3 } },
