@@ -54,21 +54,43 @@ const char *spcmd1[] = {"st", "-n", "spterm", "-g", "120x34", NULL }; // st
 const char *spcmd2[] = {"st", "-n", "spcalc", "-f", "monospace:size=16", "-g", "50x20", "-e", "insect",  NULL }; //insect in st
 
 /* music player scratchpads */
-const char *spcmd3[] = {"st", "-n", "spmus", "-g", "120x34", "-e", "mocp", NULL };
+//const char *spcmd3[] = {"st", "-n", "spmus", "-g", "120x34", "-e", "alacritty", "-e", "mocp", "-T", "/home/csaba/mocp/themes/30equals", NULL };
+const char *spcmd3[] = {"st", "-n", "spmus", "-g", "120x34", "-e", "alacritty", NULL };
+
+/* spotify scrathcpad */
+const char *spcmd4[] = {"st", "-n", "spotify", "-g", "120x34", "-e", "spotify", NULL };
+
+/* tui spotify client scratchpad */
+const char *spcmd5[] = {"st", "-n", "spspot", "-g", "120x34", "-e", "ncspot", NULL };
+
+/* gui scratchpads */
+
+/* communication scratchpads */
+/* discord scratchpad */
+const char *spcmd6[] = {"st", "-n", "spdiscord", "-g", "200x45", "-e", "dvm", "run", "s", NULL };
+
+/* teamspeak scratchpad */
+const char *spcmd7[] = {"st", "-n", "spteamspeak", "-g", "180x45", "-e", "teamspeak3", NULL };
 
 /* discord scratchpad */
-const char *spcmd4[] = {"st", "-n", "spdiscord", "-g", "170x45", "-e", "dvm", "run", "s", NULL };
+const char *spcmd8[] = {"st", "-n", "spteams", "-g", "200x45", "-e", "com.microsoft.Teams", NULL };
+
+
 static Sp scratchpads[] = {
 	/* name          cmd  */
 	{"spterm",      spcmd1},
 	{"spcalc",      spcmd2},
 	{"spmus",       spcmd3},
-	{"spdiscord",   spcmd4},
+	{"spotify",   spcmd4},
+	{"spspot",   spcmd5},
+	{"spdiscord",   spcmd6},
+	{"spteamspeak",   spcmd7},
+	{"spteams",   spcmd8},
 };
 /*************************/
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "terminal", "web", "game", "vm", "launchers", "code", "office", "obs", "misc" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -82,7 +104,11 @@ static const Rule rules[] = {
 	{ NULL,      "spterm",    NULL,       	    SPTAG(0),     1,           1,         0,        -1 },
 	{ NULL,      "spcalc",    NULL,       	    SPTAG(1),     1,           1,         0,        -1 },
 	{ NULL,      "spmus",    NULL,       	    SPTAG(2),     1,           1,         0,        -1 },
-	{ NULL,      "spdiscord",    NULL,       	SPTAG(3),     1,           1,         0,        -1 },
+	{ NULL,      "spotify",    NULL,       	SPTAG(3),     1,           1,         0,        -1 },
+	{ NULL,      "spspot",    NULL,       	SPTAG(4),     1,           1,         0,        -1 },
+	{ NULL,      "spdiscord",    NULL,       	SPTAG(5),     1,           1,         0,        -1 },
+	{ NULL,      "spteamspeak",    NULL,       	SPTAG(6),     1,           1,         0,        -1 },
+	{ NULL,      "spteams",    NULL,       	SPTAG(7),     1,           1,         0,        -1 },
 };
 
 /* layout(s) */
@@ -230,7 +256,12 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_Return,	togglescratch,	{.ui = 0} },
 	{ MODKEY|ControlMask,			XK_m,	togglescratch,	{.ui = 1} },
 	{ ControlMask|ShiftMask,		XK_m,	togglescratch,	{.ui = 2} },
-	{ ControlMask|ShiftMask,		XK_d,	togglescratch,	{.ui = 3} },
+	{ ControlMask|ShiftMask,		XK_s,	togglescratch,	{.ui = 3} },	
+    { ControlMask|ShiftMask,		XK_g,	togglescratch,	{.ui = 4} },
+	{ ControlMask|ShiftMask,		XK_d,	togglescratch,	{.ui = 5} },
+	{ ControlMask|ShiftMask,		XK_x,	togglescratch,	{.ui = 6} },
+	{ ControlMask|ShiftMask,		XK_t,	togglescratch,	{.ui = 7} },
+
 
 	//gapsize control
 	{ MODKEY,			XK_z,		incrgaps,	{.i = +3 } },
