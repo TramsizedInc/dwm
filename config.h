@@ -76,6 +76,8 @@ const char *spcmd7[] = {"st", "-n", "spteamspeak", "-g", "180x45", "-e", "teamsp
 const char *spcmd8[] = {"st", "-n", "spteams", "-g", "200x45", "-e", "com.microsoft.Teams", NULL };
 
 
+/* discord scratchpad */
+const char *spcmd4[] = {"st", "-n", "spdiscord", "-g", "170x45", "-e", "dvm", "run", "s", NULL };
 static Sp scratchpads[] = {
 	/* name          cmd  */
 	{"spterm",      spcmd1},
