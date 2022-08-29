@@ -1,7 +1,6 @@
 # This is my modified or configured, if you will, version of dwm suckless' dynamic window manager
 <<<<<<< HEAD
-## ===============================================================================================
-=======
+## ============================================================================================
 
 >>>>>>> 8ce34d9e93eb97ae2f1d33e3cb028d48cf281a98
 It was created to make me comfortable so it may not be optimal for you
